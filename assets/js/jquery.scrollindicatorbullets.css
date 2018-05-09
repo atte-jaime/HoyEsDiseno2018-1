@@ -1,0 +1,77 @@
+@media only screen and (max-width: 767px) {
+    #scroll-indicator-bullets {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #scroll-indicator-bullets {
+        position: fixed;
+        top: 50%;
+        -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        right: 0;
+        z-index: 99999;
+        font-size: 14px;
+    }
+    #scroll-indicator-bullets ul {
+        list-style: none;
+    }
+    #scroll-indicator-bullets ul li {
+        position: relative;
+        padding-right: 55px;
+    }
+    #scroll-indicator-bullets ul li a {
+        display: block;
+        color: black;
+        padding: 10px 0;
+        -webkit-user-select: none !important;
+        -webkit-touch-callout: none;
+    }
+    #scroll-indicator-bullets ul li .bullet-nav-title {
+        position: absolute;
+        top: 4px;
+        right: -10px;
+        display: block;
+        font-weight: 600;
+        visibility: hidden;
+        opacity: 0.0;
+        white-space: nowrap;
+        text-align: right;
+        -webkit-transition: opacity 300ms, right 300ms, text-shadow 300ms;
+        transition: opacity 300ms, right 300ms, text-shadow 300ms;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+        padding: 10px 20px;
+        border-radius: 30px;
+        background: #fff;
+        box-shadow: 0px 0px 50px rgba(0,0,0,0.1);
+    }
+    #scroll-indicator-bullets ul li .bullet-item-link .circle {
+        position: relative;
+        top: 2px;
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 30px;
+        border: 2px solid #ffd800;
+        background: transparent;
+        margin: 4px 0;
+    }
+    #scroll-indicator-bullets ul li .bullet-item-link.active .circle {
+        background: #ffd800;
+    }
+    #scroll-indicator-bullets ul li.show-title .circle {
+        text-shadow: none;
+    }
+    #scroll-indicator-bullets ul li.show-title .bullet-nav-title {
+        opacity: 1.0;
+        right: 40px;
+        z-index: 99999;
+        visibility: visible;
+    }
+    #scroll-indicator-bullets ul.open .bullet-nav-title {
+        visibility: visible;
+    }
+}

@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+# Redirect all insecure requests
+RewriteCond %{HTTPS} !=on
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R=301,L]
+Redirect 301 /store    https://www.hoyesdiseno.com/tienda
+Redirect 301 /2018-1    https://www.hoyesdiseno.com/evento
+Redirect 301 /foro    https://peewah.co/events/3dd9f11feb854befb6fd915633905f98
+Redirect 301 /conferencias    https://www.hoyesdiseno.com/evento/#conferencias
+Redirect 301 /talleres    https://www.hoyesdiseno.com/evento/#talleres
+Redirect 301 /registro    https://www.hoyesdiseno.com/evento/#sign-up
+Redirect 301 /live    https://www.youtube.com/watch?v=AjYnU_zGiV0
+</IfModule>
+
+# tell web browsers not to even try HTTP on this domain for the next year
+# uncomment this only after you've confirmed your site is working on HTTPS, since it commits you to providing it over HTTPS
+# Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
