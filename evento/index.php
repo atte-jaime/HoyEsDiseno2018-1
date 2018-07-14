@@ -121,10 +121,10 @@ Design Team:
                     <a href="https://www.twitter.com/hoyesdiseno/" title="Twitter" target="_blank"><img src="assets/images/svgs/logo-twitter.svg" alt="Instagram Hoy es Diseño" /></a>
                     <a href="https://www.youtube.com/channel/UCN249AgBpZv6FvafYId5fQQ" title="Youtube" target="_blank"><img src="assets/images/svgs/logo-youtube.svg" alt="Instagram Hoy es Diseño" /></a>
                 </div>
-                <a href="/live" class="live">
+             <!---   <a href="/live" class="live">
                     <p>Estamos en</p>
                     <span class="big">VIVO</span>
-                </a>
+                </a>-->
                 <div class="time">
                     <p>Empezamos en</p>
                     <div id="demo"></div>

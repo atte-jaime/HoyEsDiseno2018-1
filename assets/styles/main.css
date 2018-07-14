@@ -1527,6 +1527,15 @@ body section#form div.box p.sending {
 body section#form div.box form {
   width: 100%;
 }
+body section#form div.box form div.g-recaptcha {
+  float: left !important;
+  display: flex !important;
+  align-items: center !important;
+  align-content: center !important;
+  margin-bottom: 20px !important;
+  width: 100% !important;
+  text-align: center !important;
+}
 body section#form div.box form label {
   float: left;
   display: inline-block;

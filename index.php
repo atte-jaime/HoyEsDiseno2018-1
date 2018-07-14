@@ -50,6 +50,7 @@ COLOMBIA -->
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="assets/js/jquery.scrollindicatorbullets.js"></script>
     <script src="assets/js/jquery.scrollindicatorbullets.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -195,7 +196,7 @@ COLOMBIA -->
                 </div>
             </div>
         </section>
-        <section id="counter">
+      <section id="counter">
             <div class="box">
                 <p>Nuestro próximo evento <b>2018-1</b> empezará en</p>
                 <div id="demo"></div> <span class="date">· VIERNES 4 & SÁBADO 5 DE MAYO 2018 ·</span>
@@ -380,7 +381,7 @@ $to ='judavidpe@gmail.com' . ', ';
 $to .='info@hoyesdiseno.com'. ', ';
 $headers = "Content-Type: text/html; charset=utf-8\n";
 $headers .= "From:".$_POST['correo']."\r\n";
-$tema="$_POST[name] - Mensaje Hoy es Diseno";
+$tema="$_POST[name] - Mensaje Hoy es Diseno Web";
 $mensaje="
 <div style='margin: none; width: 100%;'>
 <a href='http://www.hoyesdiseno.com' title='' style='background:#000000;padding:20px;box-sizing:border-box;width:100%;text-align:left;margin-bottom:20px;display:block;'><img src='http://www.hoyesdiseno.com/imgs/logohed.svg' alt='Banner' style='height:30px;'/></a>
@@ -410,27 +411,6 @@ Hoy es Diseño 2018<br/>
 
     // Envia un e-mail para el remitente, agradeciendo la visita en el sitio, y diciendo que en breve el e-mail sera respondido.
 
-$mensaje2  = "
-<div style='margin: none; width: 100%;'>
-    <a href='http://www.hoyesdiseno.com' title='' style='background:#000000;padding:20px;box-sizing:border-box;width:100%;text-align:left;margin-bottom:20px;display:block;'><img src='http://www.hoyesdiseno.com/imgs/logohed.svg' alt='Banner' style='height:30px;'/></a>
-    <p style='font-size:14px;font-family:Segoe UI,calibri,arial;color:#555;line-height:25px;margin-bottom:0px;padding:10px 15px;box-sizing:border-box;margin-bottom: 20px;display: block;'>Estimado/a
-        <br/> <b style='color:#111;font-weight:900;'>$_POST[name]</b>,
-        <br/>
-        <br/> Cordial Saludo,
-        <br/>
-        <br/> Te agradecemos por haberte comunicado con Hoy es Diseño 2018, próximamente estarás recibiendo notificación acerca de tu mensaje.
-        <br/>
-        <br/> Atentamente,
-        <br/> Equipo Hoy es Diseño 2018
-        <br/> <a href='http://www.hoyesdiseno.com' title='' style='color:#000000;font-family:Segoe UI,calibri,arial;font-weight: 500;text-decoration:none !important;'>www.hoyesdiseno.com</a> </p>
-
-    <p style='background:#eee;font-size:12px;color:#aaa;line-height:20px;font-family:Segoe UI;text-align:left;width:100%;box-sizing:border-box;padding:10px 15px;margin: 0px;display: block;margin-top:20px;'>ATENCION: No responda a este mensaje, es creado automaticamente por nuestro servidor. Se han omitido intencionalmente las tildes y carácteres especiales por compatibilidad.
-        <br/> AVISO LEGAL: Este mensaje es confidencial, puede contener informacion privilegiada y no puede ser usado ni divulgado por personas distintas de su destinatario. Si obtiene esta transmision por error, por favor destruya su contenido y avise a su remitente. Esta prohibida su retencion, grabacion, utilizacion, aprovechamiento o divulgacion con cualquier proposito. Este mensaje ha sido sometido a programas antivirus. No obstante, Hoy es Diseno 2018 no asume ninguna responsabilidad por eventuales danos generados por el recibo y el uso de este material, siendo responsabilidad del destinatario verificar con sus propios medios la existencia de virus u otros defectos. </p>
-    <p style='color:#ccc;font-size:12px;font-family:Segoe UI,calibri,arial;margin-top:20px;text-align:center;display: block;'>By <a href='https://instagram.com/iamjuandv' style='color:#777;text-decoration:none' target='_blank'>Juan David Pérez</a>.</p>
-</div>";
-
-$envia =  mail($_POST['correo'],"Gracias por contactarte con Hoy es Diseno",$mensaje2,$headers);
-
 echo "<p class='sending'>¡Hola $_POST[name]!<br/>
 Tu mensaje se ha enviado con éxito, próximamente estarás recibiendo notificación acerca de tu mensaje.</p>";
 }
@@ -446,6 +426,8 @@ Tu mensaje se ha enviado con éxito, próximamente estarás recibiendo notificac
                     <label>
                         <textarea required placeholder="Mensaje" name="msm"></textarea>
                     </label>
+                    <div class="g-recaptcha" data-sitekey="6LcVJGQUAAAAAA4fXeobPec3qeTI0SRQLRtDJBPm
+"></div>
                     <button type="submit">ENVIAR</button>
                 </form>
                 <div class="social">
@@ -584,7 +566,7 @@ Tu mensaje se ha enviado con éxito, próximamente estarás recibiendo notificac
             // If the count down is over, write some text
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("demo").innerHTML = "EXPIRED";
+                document.getElementById("demo").innerHTML = "REALIZADO";
             }
         }, 1000);
     </script>
