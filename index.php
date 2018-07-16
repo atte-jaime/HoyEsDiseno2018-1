@@ -377,7 +377,26 @@ COLOMBIA -->
             if(!empty($_POST['name']) AND !empty($_POST['correo']) AND
                !empty($_POST['msm']) AND
                !empty($_POST['tel'])){
-$to ='judavidpe@gmail.com' . ', ';
+
+                $nam = "$_POST[name]";
+                $msm = "$_POST[msm]";
+                $bcc = true;
+                $avs = false;
+
+                $blocked_words = "loan,Loan,loans,Loans,lender,Cash,Online,online,Payday,payday,Credit,credit,Lenders,lenders,Pay,pay,Paydayloan,Speedy,speedy,cash,fuck,Fuck,porn";
+                $blocked_words_expo = explode(",",$blocked_words);
+                foreach($blocked_words_expo as $rmw){
+                    if(strpos($nam,$rmw) == true || strpos($msm,$rmw) == true){
+                       // $_POST['msm'] = str_replace($rmw,'MSMSMS',$_POST['msm']);
+                        $bcc = false;
+                        $avs = true;
+                    }
+                }
+
+
+                if($bcc == true){
+
+                    $to ='judavidpe@gmail.com' . ', ';
 $to .='info@hoyesdiseno.com'. ', ';
 $headers = "Content-Type: text/html; charset=utf-8\n";
 $headers .= "From:".$_POST['correo']."\r\n";
@@ -413,9 +432,24 @@ Hoy es Diseño 2018<br/>
 
 echo "<p class='sending'>¡Hola $_POST[name]!<br/>
 Tu mensaje se ha enviado con éxito, próximamente estarás recibiendo notificación acerca de tu mensaje.</p>";
+                }
+                else if($avs == true){
+                    echo "<p class='failed'>¡Hola $_POST[name]!<br/>
+Tu mensaje NO se pudo enviar, ha sido rechazado como SPAM, por favor contáctanos a través de este correo info@hoyesdiseno.com y atenderemos tu comentario.<br><br>
+
+<b class='con'>Contenido</b><br>
+
+<span class='msm'>Nombre: $_POST[name]</span><br>
+<span class='msm'>Mensaje: $_POST[msm]</span><br>
+<span class='tel'>Teléfono: $_POST[tel]</span><br>
+<span class='correo'>Correo: $_POST[correo]</span></p>
+";
+                }
+
 }
 
             ?>
+
                 <form method="post" action="#form">
                     <label class="not">
                         <input type="text" required placeholder="Nombre y Apellido" name="name" /><span class="dot"></span> </label>
